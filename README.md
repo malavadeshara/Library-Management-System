@@ -127,7 +127,7 @@ A custom exception class for handling cases when a book is not available for bor
 
 1. **Encapsulation**: 
    - **Definition**: Wrapping data and methods into a single class.
-   - **Example**: The `Book` class encapsulates the properties (`title`, `author`, etc.) and methods (`getTitle()`, `getIsbn()`) for managing book data.
+   - **Example**: The `Book` class encapsulates the properties (`title`, `author`, etc.) and methods (`getTitle()`, `getAuthor()`, & `getCopies()`) for managing book data.
 
 2. **Abstraction**: 
    - **Definition**: Hiding complex details and exposing only necessary information.
