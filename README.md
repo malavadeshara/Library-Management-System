@@ -19,13 +19,13 @@ The `Library` class manages the collection of books, user registrations, and the
 
 #### Members
 
-- `ArrayList<Book> availableBooks`: A list of books available in the library.
-- `HashMap<String, User> registeredUsers`: A map of user IDs to registered users (students and faculty).
-- `HashMap<String, String> borrowedBooks`: A map of borrowed books with user IDs and the corresponding book details.
+- `ArrayList<User> users`: A list of users registered in the library.
+- `HashMap<String, Book> books`: A map of books available in the library.
+- `HashMap<User, String> borrowedBookData`: A map of borrowed books with user object and the corresponding book detail.
 
 #### Methods
 
-- `void addBook(String title, String author, String isbn, int quantity)`: Adds a new book to the library.
+- `void addUser(User user)`: Registers a new user (either student or faculty).
 - `void registerUser(String userId, String name, String userType)`: Registers a new user (either student or faculty).
 - `void borrowBook(String userId, String isbn)`: Lends a book to a user, checking availability.
 - `void returnBook(String userId, String isbn)`: Returns a borrowed book.
