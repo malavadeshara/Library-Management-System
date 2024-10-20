@@ -25,14 +25,25 @@ The `Library` class manages the collection of books, user registrations, and the
 
 #### Methods
 
-- `void addUser(User user)`: Registers a new user (either student or faculty).
-- `void registerUser(String userId, String name, String userType)`: Registers a new user (either student or faculty).
-- `void borrowBook(String userId, String isbn)`: Lends a book to a user, checking availability.
-- `void returnBook(String userId, String isbn)`: Returns a borrowed book.
-- `void listAvailableBooks()`: Displays all available books.
-- `void listRegisteredUsers()`: Displays all registered users.
-- `void listBorrowedBooks()`: Displays all borrowed books and the users who borrowed them.
+- `ArrayList<User> getUsers()`: To get the information about all the registered users.
+- `HashMap<String, Book> getBooks()`: To get the information about all the available books in the library.
 
+### 2. Inner Class Inventory
+
+The `Inventory` class represents the Inventory of the library.
+
+#### Members
+
+- No private members for Inner class Inventory.
+
+#### Methods
+
+- `void addBook(String title, String author, int copies)`: Function to add books in the inventory of library with corresponding details.
+- `void removeBook(String title)`: Function to remove perticular book from the library inventory.
+- `isAvailable(String title)`: Function to check whether the perticular book is available in the library inventory or not.
+- `borrowBook(String title, User user)`: Function to borrow the book from library.
+- `returnBook(String title, User user)`: Function to return the book.
+  
 ### 2. Book Class
 
 The `Book` class represents a book in the library.
@@ -41,16 +52,14 @@ The `Book` class represents a book in the library.
 
 - `String title`: Title of the book.
 - `String author`: The name of the author.
-- `String isbn`: ISBN number of the book.
-- `int quantity`: Number of copies available in the library.
+- `int copies`: Number of copies available in the library.
 
 #### Methods
 
 - `String getTitle()`: Retrieves the title of the book.
 - `String getAuthor()`: Retrieves the author's name.
-- `String getIsbn()`: Retrieves the ISBN number.
-- `int getQuantity()`: Retrieves the available quantity of the book.
-- `void setQuantity(int quantity)`: Updates the quantity of the book.
+- `int getCopies()`: Retrieves the available quantity of the book.
+- `void decreaseCopies()` and `void increaseCopies()`: Updates the quantity of the book when the user borrows or returns the book.
 
 ### 3. User Class
 
@@ -58,13 +67,12 @@ The `User` class is the base class for library users, with common attributes for
 
 #### Members
 
-- `String userId`: The unique ID of the user.
 - `String name`: The name of the user.
 
 #### Methods
 
-- `String getUserId()`: Retrieves the user ID.
 - `String getName()`: Retrieves the user's name.
+- `boolean equals(Object obj)`: Overridden default method equals() to compare two User objects. 
 
 ### 4. Student Class
 
@@ -84,7 +92,8 @@ The `Faculty` class inherits from `User`, representing faculty users.
 
 #### Members
 - `String facultyId`: The faculty's identification number.
-
+- `String department`: The department of the faculty.
+  
 #### Methods
 
 - Inherits all methods from `User`.
