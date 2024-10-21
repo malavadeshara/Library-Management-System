@@ -1,2 +1,0 @@
-Data Structures,Author B,1
-Java Programming,Author A,3
